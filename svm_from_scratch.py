@@ -3,7 +3,7 @@ from matplotlib import style
 import numpy as np
 
 style.use('ggplot')
-
+# test
 
 class Support_Vector_Machine:
     def __init__(self, visualization=True):
