@@ -42,12 +42,12 @@ def coefficient_of_determination(ys_orig, ys_line):
     return 1 - (squared_error_regr / squared_error_regr_y_mean)
 
 
-xs , ys = create_dataset(1000, 1000, 1, correlation='pos')
+xs , ys = create_dataset(100, 10, 2, correlation='pos')
 m, b = best_fit_slope_and_intercept(xs, ys)
 
 regression_line = [(m*x) + b for x in xs]
 
-predict_x = 9
+predict_x = 12
 predict_y = (m * predict_x) + b
 r_squared = coefficient_of_determination(ys, regression_line)
 print(r_squared)
