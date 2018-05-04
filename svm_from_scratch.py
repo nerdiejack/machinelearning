@@ -39,7 +39,8 @@ class Support_Vector_Machine:
         step_sizes = [self.max_feature_value * 0.1,
                       self.max_feature_value * 0.01,
                       # point of expense
-                      self.max_feature_value * 0.001,]
+                      self.max_feature_value * 0.001,
+                      self.max_feature_value * 0.0005,]
 
         # extremely expensive
         b_range_multiple = 5
@@ -142,11 +143,13 @@ class Support_Vector_Machine:
 
 data_dict = {-1: np.array([[1, 7],
                              [2, 8],
-                             [3, 8],]),
+                             [3, 8],
+                             [5, 9],]),
 
               1: np.array([[5, 1],
                            [6,-1],
-                           [7, 3],])}
+                           [7, 3],
+                           [8, 2],])}
 
 svm = Support_Vector_Machine()
 svm.fit(data=data_dict)
@@ -158,7 +161,9 @@ predict_us = [[0, 10],
               [5, 5],
               [5, 6],
               [6, -5],
-              [5, 8]]
+              [5, 8],
+              [10, 8],
+              [9, 4]]
 
 for p in predict_us:
     svm.predict(p)
